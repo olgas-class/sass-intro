@@ -1,0 +1,72 @@
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: $primary_color;
+}
+
+// .main-section {
+//     background-color: lightblue;
+//     padding: 2rem 0;
+// }
+//
+// .main-section h2 {
+//     color: darkblue;
+// }
+
+.main-section {
+  background-color: lightblue;
+  padding: 4rem 0;
+
+  // .main-section.dark
+  &.dark {
+    background-color: darkslategrey;
+  }
+
+  //.main-section h2
+  h2 {
+    color: darkblue;
+
+    // h2 .highlight
+    .highlight {
+      background-color: yellow;
+    }
+  }
+
+  .subtitle {
+    color: gray;
+  }
+}
+
+.button {
+  background-color: lightgreen;
+  color: black;
+  padding: 0.4rem 1rem;
+
+  &:hover {
+    background-color: darkcyan;
+    color: white;
+
+    span {
+    }
+  }
+}
+
+.main-section {
+  position: relative;
+  &.dark {
+    h2 {
+      @include abs_center();
+    }
+  }
+}
+
+.my-list {
+  @include flex(row, space-between);
+}
